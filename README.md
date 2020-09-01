@@ -22,10 +22,19 @@ There are some of library features:
     ```
     The following output:
     
-    <p align="center">
-        <img src="https://github.com/danilos1/shortcuts/blob/master/images/table.png"/>
-    </p>
-
+    ```
+    Employees table
+    Description: Table represents a marketplace with goods and their prices
+    Records: 3
+    |====|==============================|=========|
+    | №  | Goods                        | Price   |
+    |----|------------------------------|---------|
+    | 1  | Korg Minilogue               | 546.0   | 
+    | 2  | iPhone 11 128GB              | 965.79  | 
+    | 3  | Canon EOS 77D EF-S 18-135mm  | 902.13  | 
+    |====|==============================|=========|
+   ```
+    
 
 # License
 Code is under [MIT License](https://github.com/danilos1/shortcuts/blob/master/LICENSE)
