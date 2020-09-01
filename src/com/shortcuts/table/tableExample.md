@@ -1,4 +1,6 @@
-## Employees table<hr>**Description: Table represents a marketplace with goods and their prices**<br>**Records: 3**
+## Employees table<hr>
+**Description: Table represents a marketplace with goods and their prices**<br>
+**Records: 3**
 
 
 | №  | Goods                        | Price   |

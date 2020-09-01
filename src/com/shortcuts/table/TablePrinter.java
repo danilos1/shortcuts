@@ -41,10 +41,10 @@ public class TablePrinter {
 
     public boolean printToMarkdownFile(File mdFile, boolean append) {
         try (FileWriter fileWriter = new FileWriter(mdFile, append)) {
-            StringBuilder sb = new StringBuilder("## "+table.getTableTitle()+" table<hr>")
+            StringBuilder sb = new StringBuilder("## "+table.getTableTitle()+" table<hr>\n")
                     .append("**Description: ")
                     .append(table.getDescription())
-                    .append("**<br>")
+                    .append("**<br>\n")
                     .append("**Records: ")
                     .append(table.getRowDimensions())
                     .append("**\n\n");
