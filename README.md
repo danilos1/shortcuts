@@ -34,7 +34,6 @@ There are some of library features:
     | 3  | Canon EOS 77D EF-S 18-135mm  | 902.13  | 
     |====|==============================|=========|
    ```
-    
 
 # License
 Code is under [MIT License](https://github.com/danilos1/shortcuts/blob/master/LICENSE)
