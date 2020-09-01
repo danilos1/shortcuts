@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/danilos1/shortcuts/blob/master/LICENSE)
 
-An expandable library of delicious and convenient shortcuts utils, making development more easier and good-looking!
+## An expandable library of delicious and convenient shortcuts utils, making development more easier and good-looking!
 
 There are some of library features:
 
