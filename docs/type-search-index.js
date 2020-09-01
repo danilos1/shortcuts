@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.shortcuts","l":"App"},{"p":"com.shortcuts.table","l":"Table"},{"p":"com.shortcuts.table","l":"TablePrinter"},{"p":"com.shortcuts.table","l":"TableSizeException"},{"p":"com.shortcuts.table","l":"TableTypeException"}]
