@@ -36,4 +36,4 @@ List of library features:
    ```
 
 # License
-Code is under [MIT License](https://github.com/danilos1/shortcuts/blob/master/LICENSE)
+The code is under [MIT License](https://github.com/danilos1/shortcuts/blob/master/LICENSE)
