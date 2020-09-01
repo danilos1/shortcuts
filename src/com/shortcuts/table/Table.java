@@ -6,12 +6,33 @@ public class Table {
     private String tableTitle;
     private Object[][] data;
     private String[] titles;
+    private String description;
     private int row, col;
 
+    public String getDescription() {
+        return description;
+    }
 
-    public Table(String tableTitle, String[] titles) {
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Object[][] getData() {
+        return data;
+    }
+
+    public int getRowDimensions() {
+        return row;
+    }
+
+    public int getColumnDimensions() {
+        return col;
+    }
+
+    public Table(String tableTitle, String description, String[] titles) {
         this.tableTitle = tableTitle;
         this.titles = titles;
+        this.description = description;
         this.col = titles.length;
         data = new Object[15][15];
     }
@@ -72,9 +93,21 @@ public class Table {
         return null;
     }
 
+    public String getTableTitle() {
+        return tableTitle;
+    }
+
+    public String[] getTitles() {
+        return titles;
+    }
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Table: "+tableTitle+"\n");
+        StringBuilder sb = new StringBuilder(getTableTitle() + " table").append("\n");
+        sb.append("Description: ")
+                .append(description).append("\n")
+                .append("Records: ").append(row).append("\n");
+
         int[] columnLengths = new int[col];
         for (int i = 0; i < col; i++) {
             int maxLength = String.valueOf(data[0][i]).length();

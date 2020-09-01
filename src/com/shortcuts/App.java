@@ -1,7 +1,9 @@
 package com.shortcuts;
 
 import com.shortcuts.table.Table;
+import com.shortcuts.table.TablePrinter;
 
+import java.io.File;
 import java.util.Arrays;
 
 /**
@@ -27,22 +29,18 @@ public class App
     public static void main( String[] args )
     {
         Table table = new Table("Employees",
-                new String[]{"№","NSP", "Rate", "Mob. telephone", "City"}
+                "Table represents a marketplace with goods and their prices",
+                new String[]{"№","Goods", "Price"}
         );
 
-        for (int i = 0; i < 20; i++) {
-            table.addRow(new Object[]{i+1, 5.415-i, new A("Danoon"),5888115, new A("Sfagaghads")});
-        }
-
-        Object[] column0 = table.getColumn(2);
-        System.out.println(Arrays.toString(column0));
-
-        Object[] column1 = table.getColumn("Rate");
-        System.out.println(Arrays.toString(column1));
+        table.addRow(new Object[]{1, "Korg Minilogue", 546.});
+        table.addRow(new Object[]{2, "iPhone 11 128GB", 965.79});
+        table.addRow(new Object[]{3, "Canon EOS 77D EF-S 18-135mm", 902.13});
 
 
-        // Error: Invalid column type
-        //  table.addRow(new Object[]{"1", 5.415-2, new A("Danoon"),new A("Sfagaghads"), new A("Sfagaghads")}); // Error
+        TablePrinter tablePrinter = new TablePrinter(table);
+        tablePrinter.printToMarkdownFile(new File("C:\\Users\\Admin\\IdeaProjects\\shortcuts\\src\\com\\shortcuts\\table\\tableExample.md"));
+
 
         System.out.println(table);
     }
