@@ -4,7 +4,7 @@
 
 ## An expandable library of delicious and convenient shortcuts utils, making development more easier and good-looking!
 
-There are some of library features:
+List of library features:
 
 - ```table``` package is used for representing some table of data. It allows you to add, *insert*, *remove* rows and columns, it's kinda of small database in a pretty output.
     For example, let's create a simple table, representing a merketplace with goods and their prices:
