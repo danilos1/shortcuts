@@ -1,8 +1,10 @@
 package com.shortcuts.table;
 
+import java.util.NoSuchElementException;
+
 public class Table {
     private String tableTitle;
-    private Object[][] rows;
+    private Object[][] data;
     private String[] titles;
     private int row, col;
 
@@ -11,7 +13,59 @@ public class Table {
         this.tableTitle = tableTitle;
         this.titles = titles;
         this.col = titles.length;
-        rows = new Object[15][15];
+        data = new Object[15][15];
+    }
+
+    public Object get(int rowIdx, int colIdx) {
+        if (rowIdx >= row || colIdx >= col) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        return data[rowIdx][colIdx];
+    }
+
+    public Object[] getRow(int rowIdx) {
+        if (rowIdx >= row)
+            throw new IndexOutOfBoundsException();
+
+        Object[] rows = new Object[col];
+        for (int i = 0; i < col; i++) {
+            rows[i] = data[rowIdx][i];
+        }
+
+        return rows;
+    }
+
+    public Object[] getColumn(int colIdx) {
+        if (colIdx >= col)
+            throw new IndexOutOfBoundsException();
+
+        Object[] column = new Object[row];
+        for (int i = 0; i < row; i++) {
+            column[i] = data[i][colIdx];
+        }
+
+        return column;
+    }
+
+    public Object[] getColumn(String title) {
+        int colIdx = -1;
+        for (int i = 0; i < titles.length; i++) {
+            if (title.equalsIgnoreCase(titles[i])) {
+                colIdx = i;
+                break;
+            }
+        }
+
+        if (colIdx == -1)
+            throw new NoSuchElementException("Cannot find a title '"+title+"'");
+
+        Object[] column = new Object[row];
+        for (int i = 0; i < row; i++) {
+            column[i] = data[i][colIdx];
+        }
+
+        return column;
     }
 
     public Object get(String title, int pos) {
@@ -23,9 +77,9 @@ public class Table {
         StringBuilder sb = new StringBuilder("Table: "+tableTitle+"\n");
         int[] columnLengths = new int[col];
         for (int i = 0; i < col; i++) {
-            int maxLength = String.valueOf(rows[0][i]).length();
+            int maxLength = String.valueOf(data[0][i]).length();
             for (int j = 1; j < row; j++) {
-                int cur = String.valueOf(rows[j][i]).length();
+                int cur = String.valueOf(data[j][i]).length();
                 if (Math.abs(cur) > Math.abs(maxLength)) maxLength = cur;
             }
             columnLengths[i] = maxLength + 1;
@@ -60,7 +114,7 @@ public class Table {
             sb.append("| ");
             for (int j = 0; j < col; j++) {
                 String format = "%-"+(columnLengths[j])+"s | ";
-                sb.append(String.format(format, rows[i][j]));
+                sb.append(String.format(format, data[i][j]));
             }
             sb.append("\n");
         }
@@ -83,23 +137,23 @@ public class Table {
 
         if (row > 0) {
             for (int i = 0; i < r.length; i++) {
-                if (r[i].getClass() != rows[row - 1][i].getClass()) {
+                if (r[i].getClass() != data[row - 1][i].getClass()) {
                     throw new TableTypeException("Invalid column type");
                 }
             }
         }
 
-        rows[row++] = r;
+        data[row++] = r;
     }
 
     private void checkSize() {
-        int size = rows.length;
+        int size = data.length;
         if (row == size || col == size) {
             Object[][] temp = new Object[size + (size >> 1)][size + (size >> 1)];
             for (int i = 0; i < size; i++) {
-                System.arraycopy(rows[i], 0, temp[i], 0, rows[i].length);
+                System.arraycopy(data[i], 0, temp[i], 0, data[i].length);
             }
-            rows = temp;
+            data = temp;
         }
     }
 
