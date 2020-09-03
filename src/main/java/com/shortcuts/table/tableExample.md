@@ -8,4 +8,4 @@
 | 1  | Korg Minilogue               | 546.0   | 
 | 2  | iPhone 11 128GB              | 965.79  | 
 | 3  | Canon EOS 77D EF-S 18-135mm  | 902.13  | 
-<hr>File was saved to C:\Users\Admin\IdeaProjects\shortcuts\src\com\shortcuts\table\tableExample.md<br>
+<hr>File was saved to C:\Users\Admin\IdeaProjects\shortcuts\src\main\java\com\shortcuts\table\tableExample.md<br>

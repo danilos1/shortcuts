@@ -39,7 +39,7 @@ public class App
 
 
         TablePrinter tablePrinter = new TablePrinter(table);
-        tablePrinter.printToMarkdownFile(new File("C:\\Users\\Admin\\IdeaProjects\\shortcuts\\src\\com\\shortcuts\\table\\tableExample.md"));
+        tablePrinter.printToMarkdownFile(new File("C:\\Users\\Admin\\IdeaProjects\\shortcuts\\src\\main\\java\\com\\shortcuts\\table\\tableExample.md"));
 
 
         System.out.println(table);
