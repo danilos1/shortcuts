@@ -76,6 +76,16 @@ public class Table {
         data = new Object[15][15];
     }
 
+    public Table(String[] titles) {
+        this.tableTitle = "No title for the table";
+        this.titles = titles;
+        this.description = "No description for the table";
+        this.col = titles.length;
+        data = new Object[15][15];
+    }
+
+
+
     /**
      * Receives a table element by <code>rowIdx</code> and <code>colIdx</code> indexes.
      * @param rowIdx it is an index of a row
@@ -179,12 +189,12 @@ public class Table {
         return titles;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder(getTableTitle() + " table").append("\n");
-        sb.append("Description: ")
-                .append(description).append("\n")
-                .append("Records: ").append(row).append("\n");
+    public String print(boolean isShowTitle, boolean isShowDescription, boolean isShowRecords) {
+        StringBuilder sb = new StringBuilder().append("\n");
+
+        if (isShowTitle) sb.append(getTableTitle()).append(" table").append('\n');
+        if (isShowDescription) sb.append("Description: ").append(description).append("\n");
+        if (isShowRecords) sb.append("Records: ").append(row).append("\n");
 
         int[] columnLengths = new int[col];
         for (int i = 0; i < col; i++) {
@@ -237,6 +247,19 @@ public class Table {
         }
         sb.append("|\n");
         return sb.toString();
+    }
+
+    public String print(boolean isShowAdditionalInfo) {
+        return print(isShowAdditionalInfo, isShowAdditionalInfo, isShowAdditionalInfo);
+    }
+
+    public String print() {
+        return print(true);
+    }
+
+    @Override
+    public String toString() {
+        return print();
     }
 
     /**

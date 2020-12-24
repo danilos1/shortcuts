@@ -6,25 +6,7 @@ import com.shortcuts.table.TablePrinter;
 import java.io.File;
 import java.util.Arrays;
 
-/**
- * Hello world!
- *
- */
-
-class A {
-    private String name;
-
-    public A(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-}
-
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
